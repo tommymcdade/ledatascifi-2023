@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>L05_and_06_pandas slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>L06_pandas_probs slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14669,13 +14669,15 @@ div.jp-OutputPrompt {
 
 <div class="reveal">
 <div class="slides"><aside class="notes">
-Lecture notes
+Lecture notes for this week
 - Day 1, we get through pandas Q3 meaning, we cover
     - A1 (where the answer key is, they should review it to learn from my solutions, how to find peer reviews)
     - Numpy
     - Pandas vocab &lt;&lt; take care here
+- Day 2:    
     - EDA
-    - Q0-Q3
+    - Q0-Q7
+    
 </aside><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14683,445 +14685,8 @@ Lecture notes
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Hello!-Today:">Hello! Today:<a class="anchor-link" href="#Hello!-Today:">&#182;</a></h1><ol>
-<li>Before class: Copy today's exercise file (<code>pandas exercises.ipynb</code>) and the Module 2 notes from the textbook into your class notes repo, open both</li>
-<li>Discussing ASGN1 and peer reviews</li>
-<li>A brief discussion of <code>numpy</code></li>
-<li>Getting dirty with <code>pandas</code></li>
-</ol>
+<h1 id="Hello!">Hello!<a class="anchor-link" href="#Hello!">&#182;</a></h1><p>Today, we are still working on <code>pandas exercises.ipynb</code></p>
 <p><em>Please fill out a short check in survey soon: <a href="https://forms.gle/3C56TPPJsWukKw318">Link here, or on the dashboard's tasks</a></em></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ASGN-1-Thoughts...">ASGN 1 Thoughts...<a class="anchor-link" href="#ASGN-1-Thoughts...">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="And-some-awards">And some awards<a class="anchor-link" href="#And-some-awards">&#182;</a></h3><p>The award for most commits goes too...</p>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Class 1: Jersey (close: Alex R, Margaux)</li>
-<li>Class 2: Rha (close: Taylor, Will, Juan, Brooks)</li>
-</ul>
-<p>Come on down!</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>And also, an award for favorite README meme (TOUGH competition)</p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>Class 1: <a href="https://github.com/LeDataSciFi/asgn-01-nicole-elchaar">Nicole</a>. Honorable Mentions: <a href="https://github.com/LeDataSciFi/asgn-01-JerseyK">Jersey</a>, <a href="https://github.com/LeDataSciFi/asgn-01-stevenwang1213">Steven</a>, <a href="https://github.com/LeDataSciFi/asgn-01-andrewschac">Andrew</a>, <a href="https://github.com/LeDataSciFi/asgn-01-nicole-JonTRZ">Jon</a>,</li>
-<li>Class 2: <a href="https://github.com/LeDataSciFi/asgn-01-TSheridan25">Taylor</a>. Honorable Mentions: <a href="https://github.com/LeDataSciFi/asgn-01-cartertk223">Carter</a>, <a href="https://github.com/LeDataSciFi/asgn-01-linhthai206">Linh</a></li>
-</ul>
-<p>Come on down!</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Any-interest-in-a-free-lunch?">Any interest in a free lunch?<a class="anchor-link" href="#Any-interest-in-a-free-lunch?">&#182;</a></h2><p><em>Caveat: My company is a condition of the lunch.</em> Lehigh pays so that students and faculty can break bread and chat, open topic. Up to 5 students per lunch.</p>
-<p>If interested, email me and include</p>
-<ul>
-<li>Classmates that have agreed to join you.</li>
-<li>Day preference:<ul>
-<li>Monday (my break is 130-3pm)</li>
-<li>Friday (noon, some Fridays this semester)</li>
-<li>Else: which day of week/times can work for you</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div></section></section><section ><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ASGN-1-Peer-reviews">ASGN 1 Peer reviews<a class="anchor-link" href="#ASGN-1-Peer-reviews">&#182;</a></h2><ol>
-<li>Peer review: A chance to learn and teach!<ul>
-<li>You were added to two classmate's repos today for reviewing</li>
-<li>Go to <a href="github.com">github.com</a>. On the left side of the page, under repositories, you'll see that you have access to assignments for two peers.</li>
-</ul>
-</li>
-<li>For each student you're reviewing, open the answer key I put in the repo and click on the link to the survey<ul>
-<li>Most of the review can be done looking at the repo online, but...</li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>⭐⭐⭐ <strong>MOST IMPORTANT: You must clone the repo to your computer and run the code ON YOUR COMPUTER</strong> (The essential ingredient of collaborative coding, and a fundamental takeaway from class) ⭐⭐⭐</p>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If you have questions while doing reviews</p>
-<ul>
-<li>if it is a general question (&quot;Is XYZ correct?&quot;): @classmates, but don't identify the reviewee</li>
-<li>if it is sensitive: email Mike (and CC me)</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Review-demo-+-working-through-Q7">Review demo + working through Q7<a class="anchor-link" href="#Review-demo-+-working-through-Q7">&#182;</a></h3><p>Volunteer? I'll submit a full feedback form for your assignment as well.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Numpy-summary">Numpy summary<a class="anchor-link" href="#Numpy-summary">&#182;</a></h2><p>To use numpy functions, add this to beginning of your notebook: <code>import numpy as np</code></p>
-<p>Why is there a chapter in the book on it?</p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Numpy is great for:</strong></p>
-<ul>
-<li>simulations and derivatives</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>doing math operations pandas can't<ul>
-<li>Ex: <code>np.median()</code>, <code>np.percentile()</code>, <code>np.floor()</code></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>has features pandas doesn't<ul>
-<li>Ex: <code>np.nan</code> (missing value)</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>does all of that fast</li>
-</ul>
-<p><code>np</code> 🤝 <code>pandas</code></p>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="NP-reference">NP reference<a class="anchor-link" href="#NP-reference">&#182;</a></h3><p><a href="numpy.org/doc">numpy.org/doc</a> has pages with</p>
-<ul>
-<li>the &quot;absolute basics&quot; start here (very good)</li>
-<li>quickstart guide (next)</li>
-<li>how-to section</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="In-class-NP-examples">In-class NP examples<a class="anchor-link" href="#In-class-NP-examples">&#182;</a></h2><ol>
-<li>Indexing looks the same (at least for 1D arrays):</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">myray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># create array</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;myray:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slice:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">11</span><span class="p">])</span> <span class="c1"># pick the 6-10th elements</span>
-<span class="c1"># Q1: pick the odd elements</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>myray: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
-slice: [ 6  7  8  9 10]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol>
-<li>Indexing looks the same (at least for 1D arrays)</li>
-<li>Booleans and masking</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a random vector (every run of this --&gt; diff #s)</span>
-<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
-<span class="n">rg</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
-<span class="n">myray</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;myray:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">)</span> 
-
-<span class="c1"># Q2: how can you always select the positive elements from this?</span>
-<span class="c1"># prof demo: booleans, a single condition--&gt;bool, </span>
-<span class="c1">#            using booleans on an array/list, </span>
-<span class="c1">#            indexing/filtering via booleans as &quot;masks&quot;</span>
-<span class="c1">#            then answer</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>myray: [ 1.33145787  0.54058088 -0.06731178 -0.88356257 -0.09785319]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="What-we-just-learned-about-boolean-masking-works-directly-in-Pandas-to-filter-data-based-on-criteria!">What we just learned about boolean masking works directly in Pandas to filter data based on criteria!<a class="anchor-link" href="#What-we-just-learned-about-boolean-masking-works-directly-in-Pandas-to-filter-data-based-on-criteria!">&#182;</a></h4>
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="PANDAS">PANDAS<a class="anchor-link" href="#PANDAS">&#182;</a></h2><p><img src="https://media.giphy.com/media/KyBX9ektgXWve/source.gif" alt="" /></p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li><a href="https://ledatascifi.github.io/ledatascifi-2023/content/03/02a_pandasIntro.html">3.2.0</a>, 3.2.1</li>
-<li>How do I do X? 3.2.3 (!!!) and 3.2.7</li>
-</ul>
-<p>Let's learn to use pandas by working with real data!</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exploring-the-incredible-FRED-dataset">Exploring the incredible FRED dataset<a class="anchor-link" href="#Exploring-the-incredible-FRED-dataset">&#182;</a></h3><p><a href="https://fred.stlouisfed.org/">FRED is https://fred.stlouisfed.org/</a></p>
-<ul>
-<li>Unreal repository of data: Download, graph, and track <strong>786,000 US and international time series from 103 sources.</strong></li>
-<li>Check out &quot;at a glance&quot; and &quot;popular series&quot;</li>
-<li><strong>Usable in other classes:</strong> easy to download, clean, modify, analyze, plot all that in seconds of coding!</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Panda-basics">Panda basics<a class="anchor-link" href="#Panda-basics">&#182;</a></h2><p>Now, let's go back to the exercise file and stop right before EDA.</p>
 
 </div>
 </div>
@@ -15238,48 +14803,6 @@ slice: [ 6  7  8  9 10]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://ledatascifi.github.io/ledatascifi-2023/content/03/02e_eda_golden.html">Reference: 3.2.5</a></p>
-<p>Let's try Q0-Q3.</p>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://github.com/LeDataSciFi/ledatascifi-2023/blob/main/community_codebook/eda.py">The cookbook can help you slightly automate your EDA</a></p>
-
-</div>
-</div>
-</div>
-</div></div></section></section><section ><section >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Next-class">Next class<a class="anchor-link" href="#Next-class">&#182;</a></h3><p>Will resume the <code>pandas</code> exercises next class, ⭐⭐ during which we will have our first student led demos. ⭐⭐</p>
-<ul>
-<li>Class 1: @JerseyK and @sizhewanglehigh  should solve Q4 and @andrewschac will try Q5</li>
-<li>Class 2: @tobeybill and @AndrewBosland will demo their solutions to Q4 and try Q5.</li>
-</ul>
-<p>Do these in the pandas exercise file and sync it - I'll open your class notes repo when we discuss your solutions.</p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Student-demos">Student demos<a class="anchor-link" href="#Student-demos">&#182;</a></h3><ul>
 <li>Everyone will do a couple throughout the semester</li>
 <li>Describe your approach (pseudocode) and then show and explain code step by step</li>
@@ -15291,6 +14814,32 @@ slice: [ 6  7  8  9 10]
 </div>
 </div>
 </div></div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://ledatascifi.github.io/ledatascifi-2023/content/03/02e_eda_golden.html">Reference: 3.2.5</a></p>
+<p>Let's see wha our classmates came up with for Q0-Q3.</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://github.com/LeDataSciFi/ledatascifi-2023/blob/main/community_codebook/eda.py">The cookbook can help you slightly automate your EDA</a></p>
+<p><code>Pandas-profiling</code> can supercharge your EDA but is not a full replacement for ABCD.</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15418,7 +14967,7 @@ slice: [ 6  7  8  9 10]
 <li>HINT for the bonus: Use <code>import seaborn as sns</code> to make the plot, look up <code>hue</code> option</li>
 </ul>
 </li>
-<li>Class 1: @Qiyu6769 and @chengxiwu and @JonTRZ</li>
+<li>Class 1: @Qiyu6769 and @chengxiwu</li>
 <li>Class 2: @LucaF20 and @elg224</li>
 </ul>
 <p>Do these in the pandas exercise file and sync it - I'll open your class notes repo when we discuss your solutions.</p>
