@@ -42,12 +42,12 @@ The stakes are high! The winner walks away with a trophy, and gets their name em
 Every year, students put together great projects. A selection of these are below. 
 
 | Who | What | 
-| --- | --- | --- | 
+| --- | --- | 
 | MBAsuperwomen | [ESG and performance](https://faz320.github.io/MBAsuperwomen/)
 | Anders Seline | [Senate Trade Tracker Bot](https://github.com/anderseline/SenateTrades)
 | px_lazy | [Replicate "Lazy Prices"](https://jdean53.github.io/px_lazy/)
 | Alpha Dogs | [Predicting Argi-futures with Climate Data](https://lukecost.github.io/CommodityReturns/)
-| Wall Street Bets | [Risk aversion quiz to generate optimal portfolio weights]( https://frozen-everglades-44211.herokuapp.com/)
+| Wall Street Bets | [App to generate optimal portfolio weights after risk aversion quiz](https://donbowen-portfolio-frontier-streamlit-dashboard-app-yentvd.streamlit.app/) and its [source repo](https://github.com/donbowen/portfolio-frontier-streamlit-dashboard/blob/main/app.py)
 | Team Crushers | When Markets Invert: The GameStop Effect ([slides](https://docs.google.com/presentation/d/1PihMWaOZC5BLNMb_AU8sfd4SMgkh0lLBAzDJGKckWyE/edit#slide=id.gd9ba07311f_1_6) and [analysis](https://github.com/LeDataSciFi/some_previous_projects/tree/main/team_crushers_2021))
 | Beatcoin | [Crypto Return Factors](https://github.com/LeDataSciFi/some_previous_projects/tree/main/beatcoin_2021)
 
