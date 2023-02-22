@@ -26,6 +26,10 @@ def winsorizer_with_missing(df,low_=.01,hi_=.99,cols=None):
     So check its work! After using it, summarize the variables you wanted to 
     winsorize and see that the max and min equal the right percentiles!
 
+    EXTRA CREDIT: (1) Use this function such that it performs winsorization within
+    groups or (2) change this function so it optionally takes an argument that specify
+    groups to do the winsorizing within. 
+
     Warning/option for extra credit: There is NO error checking in this function.
     (For example: What happens if you set low_ = -1, or low_=1.1? What "should" this
     function do if a user sets those values?)
