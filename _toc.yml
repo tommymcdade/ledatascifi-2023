@@ -230,6 +230,7 @@
     sections:        
     - file: content/05/06a_saving
     - file: content/05/06b_nextsteps
+    - file: content/05/06c_dashboards
     
 - part: Slides and Memes
   chapters:
