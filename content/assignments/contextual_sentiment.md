@@ -1,55 +1,43 @@
 ## How to measure "contextual sentiment" in a 10-K
 
-So you need to create variables describe the sentiment around a particular topic in a document.
+If you want to assess the sentiment around a specific topic in a document, you need to create variables that describe it. This is particularly interesting when a firm has an overall positive tone but speaks relatively negatively about a specific topic. It can also be useful when you're interested in that particular topic. Here's how you can do it:
 
-This this most interesting when a firm has an overall positive  tone but speaks relatively negatively about a particular topic. Additionally, it can be interesting because you're specifically interested in that specific topic. 
+First, define a list of words that indicate the topic being discussed. For instance, to capture "Detroit Sports," you could include "Detroit Lions," "Red Wings" (specific enough that "Detroit" can be omitted), "Detroit Tigers," and "Detroit Pistons." However, figuring out how many synonyms to add can be tricky. Including too many may result in false positives (such as capturing discussions about other topics that contain only "Detroit" or only "Lions"), while including too few could lead to false negatives (missing discussions). Therefore, creating a topic list requires a lot of validation and hard work. If you propose a change, test it on example sentences and see if it affects the larger dataset.
 
-Here's how I'd do it:
+Second, define regex patterns that can identify if the topic is being discussed positively. In class, we discussed how to do this using `NEAR_regex`. Here are the steps:
 
-First, define the list of words that mean that topic is being discussed.
-
-- To capture "Detroit Sports", you might include "Detroit Lions", "Red Wings" (specific enough "Detroit can be omitted), "Detroit Tigers", and "Detroit Pistons".
-- Figuring out how many synonyms to add is hard. Too many and you'll start getting false positives (just "Detroit" or just "Lions" will capture discussions about other topics), too few and you'll miss discussions (false negatives). Getting topic lists right is hard work that involves lots of validation. (Propose a change, see if it works on example sentences, see if it changes anything in the larger dataset.)
-
-Second, define regex patterns that will detect if that topic is being discussed positively.
-
-- We talk about how to do this in class: Use `NEAR_regex`. We can use it to find anywhere one of our Detroit Sports words are near positive sentiment terms.
-    - The most basic usage of the function is to give it a list of strings like `["topic1", "topic2"]` and it will design a regex that looks for `"topic1"` near `"topic2"`.
-    - You can replace `"topic1"` with a _"list"_ of strings, and it will look for any of those strings near `"topic2"`.
-    - How: Put a "|" between each term (`"|".join(list_of_words)`) and parentheses around the whole thing
-    - Ex: `"(Detroit Lions|Red Wings|Detroit Tigers|Detroit Pistons)"`
-- NEAR_regex will output a crazy looking regex pattern. Let's call it `detroit_sports_positive_regex`.
+1.    Provide a list of strings like `["topic1", "topic2"]` to `NEAR_regex`. This function will create a regex that looks for `"topic1"` near `"topic2"`.
+1.    Replace `"topic1"` with a "list" of strings to look for any of those words near `"topic2"`.
+1.    To create the regex pattern, put a "|" between each term (`"|".join(list_of_words)`) and add parentheses around the whole thing. For example, `"(Detroit Lions|Red Wings|Detroit Tigers|Detroit Pistons)"`.
+1.    `NEAR_regex` will output a complex regex pattern, which we can call `detroit_sports_positive_regex`.
 
 Third, check if that topic is being discussed positively.
 
-1. _As if you were inside the loop you set up to go over the files you downloaded,_ pick just one firm, and open its 10-K file as a string variable.
-1. Clean that string, because it contains lots of HTML tags and in general has lots of non-word characters.
-    - See notes from class on how to do this and/or look through the textbook 
-    - Only proceed when you have this working well. 
-1. Use the regex pattern
-   - `hits = len(re.findall(detroit_sports_positive_regex,<clean_10_text>))` will count the number of times the document discusses losing and save it to `hits`.
-   - Save `hits` inside of the variable `detroit_sports_positive` for that document (put it in the correct row!)  
-   - **Manually check it by opening the 10-K on the browser - do your functions give you the same values you'd create if you did it by hand?**
+1. Select one firm from the files you downloaded and open its 10-K file as a string variable, as if you were inside the loop you set up for this purpose
+1. Clean the string by removing HTML tags and other non-word characters. You can refer to the notes from class or look through the textbook for guidance. Ensure that the cleaning process is working correctly before proceeding.
+1. Use the regex pattern to count the number of times the document discusses the selected topic positively: `hits = len(re.findall(detroit_sports_positive_regex,<clean_10_text>))`, and then save `hits` to the correct variable in the row corresponding to that 10-K.
+1. **Manually check it by opening the 10-K on the browser - do your functions give you the same values you'd create if you did it by hand?**
 
 Fourth, repeat.
 
-- Do that for the negative sentiment version: `detroit_sports_negative_regex`
-- Do that for a second topic (positive and negative sentiment)
-- Do that for a third topic (positive and negative sentiment)
+- Repeat those steps for the negative sentiment version: `detroit_sports_negative_regex`
+- Repeat those steps for a second topic to create two more variables (one each for positive and negative nearby sentiments)
+- Repeat those steps for a third topic (again: positive and negative sentiment)
 - For each of those,
     - Open some 10-Ks manually and read them to verify if your guess for how to check actually results in hits.
     - If it doesn't work like you think (misses obvious discussions of the risk, or finds non-discussions), tweak it.
 
-Finally, integrate this into your big for loop
+Finally, adjust this so it works on all documents
 
-1. Now, loop over all the firms, and for each firm, measure the risks in the corresponding 10-K. _Warning: Looping over rows in a pandas dataframe is a little different than normal! Look up how to do it!_
-  
-    **IMPORTANT! `.describe()` those variables after you're done!**
-    - You should have observations for most/all firms for your new measures. **Fix it - do not proceed!**
-    - If any of your variables are always 0, it's meaningless. **Change it - do not proceed!**
-    - If any of your variables are always really high, consider if your search thinks too many things are that risk. Searching for "risk" for example is too vague. 
+1. Figure out how to loop (yes, an actual for loop) over the dataframe. Within each row, extract and manipulate the available variables as needed so that you can find the corresponding document.
+    - Looping over rows in a pandas dataframe is a little different than normal for-loops! Look up how to do it!
+    - Test this out: Loop over the dataframe and just print out the filenames it should open. 
+1. Once that works, continue to integrate the code above in the for loop.
+1. **IMPORTANT!** After your code has supposedly done all the work, use `.describe()` on the new variables and check for issues.
+    - Make sure you have observations for most/all firms for your new measures. **If not, fix it before proceeding!**
+    - If any of your variables are always 0, it's meaningless. **Change it before proceeding!**
     
-## Topics
+## Topics you might use (non-exhaustive list)
 
 - High level/MBA/Porter's 5: Sales, demand, competition, regulation, suppliers, customers, employees, investment, innovation
 - Places: Ukraine, Taiwan, 
