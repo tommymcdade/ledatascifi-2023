@@ -11,6 +11,10 @@ Second, define regex patterns that can identify if the topic is being discussed 
 1.    To create the regex pattern, put a "|" between each term (`"|".join(list_of_words)`) and add parentheses around the whole thing. For example, `"(Detroit Lions|Red Wings|Detroit Tigers|Detroit Pistons)"`.
 1.    `NEAR_regex` will output a complex regex pattern, which we can call `detroit_sports_positive_regex`.
 
+```{tip}
+[Visit the textbook to learn about anchor phrases (which is the technique you're using here) and the `NEAR_regex` function.](../04/02d_RegexApplication)
+```
+
 Third, check if that topic is being discussed positively.
 
 1. Select one firm from the files you downloaded and open its 10-K file as a string variable, as if you were inside the loop you set up for this purpose
