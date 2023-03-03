@@ -43,11 +43,10 @@ Finally, adjust this so it works on all documents
     
 ## Topics you might use (non-exhaustive list)
 
+Remember, as mentioned above, once you choose a topic, you need to specify a list of words that indicate that topic is being discussed.
+
 - High level/MBA/Porter's 5: Sales, demand, competition, regulation, suppliers, customers, employees, investment, innovation
 - Places: Ukraine, Taiwan, 
 - Risks: antitrust; litigation - e.g. patent, consumer, class action; real estate; inflation; commodity; supply chain; natural disasters; weather; employees (fraud, compensation, departure); changes in tax policy; currency rates; regulatory approval; reputation; refinancing; 
 - Prof. Kathleen Hanley [has a recent paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2792943) on risks. It focuses on financial firms, which isn't our sample, but nevertheless, it contains a long list of risks in Table 5 you might find interesting.
 
-```{tip}
-This assignment is about covid. What factors of firms do you think might make a firm more or less resilient to operating in a pandemic?
-```
