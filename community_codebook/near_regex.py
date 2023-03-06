@@ -86,7 +86,10 @@ def NEAR_regex(list_of_words,max_words_between=5,partial=False,cases_matter=Fals
     input words are near each other.
 
     '''
-               
+
+    if len(list_of_words) > 4:
+        raise ValueError('Inputs should be a short list of words (4 or less) or a short list of topics where each topic is provided using the "(word1|word2|...)" syntax.')
+    
     from itertools import permutations
     
     start = r'(?:\b' # the r means "raw" as in the backslash is just a backslash, not an escape character
