@@ -158,7 +158,7 @@ test  = 'hey jimmy                      hey james'
 words = ['hey','(jimmy|james)']             # search for one word near EITHER of two others
 rgx = NEAR_regex(words,max_words_between=1)
 print(len(re.findall(rgx,test)))            # both matches are caught
-[m.group(0) for m in re.finditer(rgx,texts)]
+[m.group(0) for m in re.finditer(rgx,test)]
 
 rgx = NEAR_regex(words,max_words_between=2)
 print(len(re.findall(rgx,test)))            # but note that the regex is greedy - it grabs the largest chunks and thus misses inner matches!
