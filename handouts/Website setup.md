@@ -19,8 +19,8 @@
         - Made by https://github.com/julioveracruz/julioveracruz.github.io 
     - https://julioveracruz.github.io/testwebsite/
         - Made by https://github.com/julioveracruz/testwebsite  
-    - https://donbowen.github.io/slides-2022/
-        - Made by https://github.com/donbowen/slides-2022
+    - https://donbowen.github.io/slides/
+        - Made by https://github.com/donbowen/slides
     - https://square.github.io/
         - Made by https://github.com/square/square.github.io 
     - https://yelp.github.io/
@@ -38,7 +38,9 @@
     - Editable sections are text in blue
 - Edit index.md (text and picture, portfolio descriptions, and links, etc)
     - Can edit directly on GitHub.com or through GitHub Desktop
-- Edit 10k_nlp_covid.md (to incorporate stuff from the midterm)
+- Edit midterm_summary.md 
+	- This should be a high level over view (question, approach, findings, discussion)
+	- Incorporate your summary of your midterm analysis or progress on it
 - Practice: Convert any ipynb from the class notes folder into MD, add to website (follow steps on regression_practice page)
     - On JupyterLab, save and export any ipynb file into markdown
     - Add that resulting markdown file to your website repo
