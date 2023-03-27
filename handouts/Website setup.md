@@ -25,7 +25,9 @@
         - Made by https://github.com/square/square.github.io 
     - https://yelp.github.io/
         - Made by https://github.com/Yelp/yelp.github.io 
-
+	- https://donbowen-portfolio-frontier-streamlit-dashboard-app-yentvd.streamlit.app/
+		- Made by https://github.com/donbowen/portfolio-frontier-streamlit-dashboard/
+		
 ## WALKTHROUGH
 ### Personal website (template version)
 - Go to https://github.com/donbowen/donbowen.github.io 
@@ -41,10 +43,11 @@
 - Edit midterm_summary.md 
 	- This should be a high level over view (question, approach, findings, discussion)
 	- Incorporate your summary of your midterm analysis or progress on it
-- Practice: Convert any ipynb from the class notes folder into MD, add to website (follow steps on regression_practice page)
+- Practice: Convert any ipynb from the class notes folder into MD, add to website (follow steps on the regression_practice page on the website template we are using)
     - On JupyterLab, save and export any ipynb file into markdown
     - Add that resulting markdown file to your website repo
     - Link to your markdown file by editing index.md
+	- Edit the layout (see regression_practice.md and the "30 second fix" below)
 - Note on layout:
     - The template limits you to the “Minimal” theme preset on GitHub.com
     - For more customizability, you can create your own GitHub Pages using other theme presets with themes
@@ -61,7 +64,7 @@
     - You can choose a different theme here if you want
 - Change the link in the code/about area to the website URL. Then go look at the website
 - Settings > Collaborators:
-    - Add all teammates, and add Julio and Professor Bowen
+    - Add all teammates, and add the TA and Professor Bowen
 - In each person's personal website, change the eventual project link to link to that website
 
 ### MOVING FORWARD
