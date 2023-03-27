@@ -86,7 +86,10 @@ def NEAR_regex(list_of_words,max_words_between=5,partial=False,cases_matter=Fals
     input words are near each other.
 
     '''
-               
+
+    if len(list_of_words) > 4:
+        raise ValueError('Inputs should be a short list of words (4 or less) or a short list of topics where each topic is provided using the "(word1|word2|...)" syntax.')
+    
     from itertools import permutations
     
     start = r'(?:\b' # the r means "raw" as in the backslash is just a backslash, not an escape character
@@ -158,7 +161,7 @@ test  = 'hey jimmy                      hey james'
 words = ['hey','(jimmy|james)']             # search for one word near EITHER of two others
 rgx = NEAR_regex(words,max_words_between=1)
 print(len(re.findall(rgx,test)))            # both matches are caught
-[m.group(0) for m in re.finditer(rgx,texts)]
+[m.group(0) for m in re.finditer(rgx,test)]
 
 rgx = NEAR_regex(words,max_words_between=2)
 print(len(re.findall(rgx,test)))            # but note that the regex is greedy - it grabs the largest chunks and thus misses inner matches!

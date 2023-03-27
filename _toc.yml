@@ -47,7 +47,7 @@
     title: "How to start and turn in assignments"
   - file: content/assignments/howto_review 
     title: "How to do your peer reviews"
-  - file: content/assignments/mid_proj_placeholder 
+  - file: content/assignments/mid_proj 
     title: "Midterm project AKA ASGN 5"
   - file: content/assignments/project 
     title: "Final projects"
@@ -230,6 +230,7 @@
     sections:        
     - file: content/05/06a_saving
     - file: content/05/06b_nextsteps
+    - file: content/05/06c_dashboards
     
 - part: Slides and Memes
   chapters:
